@@ -1,0 +1,32 @@
+
+/* Responsive Styling for the View Link Button */
+/* .view-link {
+    background-color: #4caf50;
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+  }
+  
+  /* Change font size and padding for smaller screens */
+  @media (max-width: 768px) {
+    .view-link {
+      width: 100%; /* Full width on smaller screens */
+      text-align: center;
+      padding: 14px 0; /* Center-align text and adjust padding */
+      font-size: 18px; /* Increase font size slightly */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .view-link {
+      width: 100%;
+      padding: 16px 0; /* Increase padding */
+      font-size: 16px;
+    }
+  }
+   */ */

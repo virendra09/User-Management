@@ -1,0 +1,72 @@
+.user-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    animation: slideIn 0.5s ease;
+  }
+  
+  .user-form h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .user-form div {
+    margin-bottom: 15px;
+  }
+  
+  .user-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .user-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .user-form input:focus {
+    border-color: #4caf50;
+  }
+  
+  .user-form .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .user-form button {
+    width: 45%;
+    margin: 10px 2.5%;
+    padding: 12px 0;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Responsive Design for Form */
+  @media (max-width: 768px) {
+    .user-form {
+      width: 95%;
+    }
+  
+    button {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  

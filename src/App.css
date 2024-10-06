@@ -1,38 +1,239 @@
+body, html {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #3cadd6;
+  background-image: url("https://www.transparenttextures.com/patterns/scribble-light.png");
+}
+
+/*  App Container */
 .App {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header */
+.App h1 {
+  color: #333;
+  font-size: 2.5rem;
   text-align: center;
+  margin-bottom: 20px;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* General Button Styles */
+button, .view-link {
+  background-color: #f88417;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+button:hover, .view-link:hover {
+  background-color: #fbf30e;
+  color: black;
+
+}
+
+button.delete-btn {
+  background-color: #228f04;
+}
+
+button.delete-btn:hover {
+  background-color: #fbf30e;
+  color: black;
+}
+
+/* button group Container*/
+.button-group {
+  display: flex;         
+  flex-wrap: nowrap;      
+  justify-content: center; 
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    flex-wrap: wrap;         
+    justify-content: space-evenly;
+  }
+
+  button, .view-link {
+    min-width: 100px;         
+    width: calc(33.3% - 10px); /* Make buttons share equal width */
+    margin: 5px 5px;        
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Responsive Button Group  */
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column; 
+    justify-content: center;  
+    align-items: stretch;     
+    margin-top: 15px;
+  }
+
+  button, .view-link {
+    width: 100%;             
+    margin: 5px 0;           
+  }
 }
 
-.App-link {
-  color: #61dafb;
+/* Form animation */
+.user-form {
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 20px 0;
 }
 
-@keyframes App-logo-spin {
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* Search Bar */
+.search-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+  width: 300px;
+  transition: width 0.3s ease-in-out;
+}
+
+.search-input:focus {
+  width: 350px;
+  border-color: #4caf50;
+}
+
+/* Table Styles */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#user-table_thead-tr{
+  background-color: #fa09ce;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  font-size:larger;
+}
+
+.user-table th, .user-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-table tr:nth-child(even) {
+  background-color:white;
+ 
+}
+.user-table tr:nth-child(odd) {
+  background-color:rgb(236, 212, 156);
+}
+
+/* Responsive Design for Table */
+@media (max-width: 768px) {
+  /* Make the table rows display as a card layout */
+  .user-table, .user-table thead, .user-table tbody, .user-table th, .user-table td, .user-table tr {
+    display: block;
+  }
+
+  .user-table tr {
+    margin: 0 0 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  .user-table thead {
+    display: none; /* Hide table headers on smaller screens */
+  }
+
+  .user-table td {
+    text-align: right;
+    padding: 12px;
+    position: relative;
+  }
+
+  .user-table td::before {
+    content: attr(data-label); /* Display the data label */
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize; /* Capitalize labels for better readability */
+  }
+
+  /* Adjustments for specific labels */
+  .user-table td[data-label="ID"]::before { content: "ID"; }
+  .user-table td[data-label="Name"]::before { content: "Name"; }
+  .user-table td[data-label="Email"]::before { content: "Email"; }
+  .user-table td[data-label="Actions"]::before { content: "Actions"; }
+
+  .user-table td[data-label="Actions"] {
+    display: flex;
+    justify-content: space-evenly; /* Space out action buttons */
+    padding-top: 15px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  button, .view-link {
+    width: 100%; 
+    margin: 8px 0; 
+  }
+}
+
+
+/*Devices Smaller Than 480px */
+@media (max-width: 480px) {
+  .App h1 {
+    font-size: 1.8rem;
+  }
+
+  button, .view-link {
+    font-size: 14px; 
+    width: 100%; 
+    margin: 8px 0;
+  }
+
+  .search-input {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .user-form {
+    padding: 15px;
+    width: 95%;
+    margin: 10px auto;
+  }
+
+  .user-detail-container {
+    padding: 15px;
+    width: 95%;
+    margin: 10px auto;
   }
 }
